@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Счёт счастья</title>
+   	<link href="../static/bootstrap.css" rel="stylesheet">
+  </head>
+  <body>
+	<h1 class="text-center">Счёт</h1>
+    <table class="table table-dark table-striped">
+		<thead>
+			<tr>
+			  <th scope="col">#</th>
+			  <th scope="col">Никнейм</th>
+			  <th scope="col">Очки</th>
+			</tr>
+		  </thead>
+		  <tbody>
+
+			{% for score, name in players %}
+			<tr>
+				<th scope="row">1</th>
+				<td>{{name}}</td>
+				<td>{{score}}</td>
+			</tr>
+			{% endfor %}
+
+		  </tbody>
+	</table>
+  </body>
+</html>
