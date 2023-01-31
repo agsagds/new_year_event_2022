@@ -73,6 +73,7 @@ def score():
     for i in mp.players.values():
         playersDTO.append((i.score, i.name))
     playersDTO.sort()
+    playersDTO=playersDTO[::-1]
     return render_template('score.htm', players=playersDTO)
 
 
@@ -81,6 +82,11 @@ def view():
     return render_template('map.htm', width=cfg.MAP_WIDTH, height=cfg.MAP_HEIGHT)
 
 
+@app.route('/base_strategy')
+def base_strategy():
+    return render_template('strategy.htm', width=cfg.MAP_WIDTH, height=cfg.MAP_HEIGHT)
+
+
 # Run the application
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0', port=8080)

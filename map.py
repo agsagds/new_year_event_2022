@@ -75,9 +75,10 @@ def gift(p_id: str):
         if can_place(players[p_id], h):
             if h.gifted:
                 already = True
-            players[p_id].score += h.happines
-            h.gifted=True
-            cnt += 1
+            else:
+                players[p_id].score += h.happines
+                h.gifted=True
+                cnt += 1
     if all_gifted():
         generate_map()
     if cnt>0:
